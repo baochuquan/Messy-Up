@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>搜索框</title>
+	</head>
+	<style type="text/css">
+		* {margin: 0; padding: 0; text-decoration: none;}
+		body {
+			background-image: url(river.jpg);
+			background-repeat: no-repeat;
+			background-position: center top;
+			width: 100%;
+
+		}
+		#logo {
+			background-image: url(logo.png); 
+			width: 107px;
+			height: 53px; 
+			float: left;
+			margin: -8px 18px 0 0;
+		}
+		#form {
+			float: left;
+			background-color: #fff;
+		}
+		#search-text {
+			border: 0;
+			height: 30px;
+			width: 250px;
+			outline: none;
+			float: left;
+			font-size: 1.2em;
+		}
+		#search-button {
+			border: 0;
+			background-image: url(search-button.png);
+			width: 30px;
+			height: 30px;
+			float: right;
+		}
+		#bg {
+			width: 500px;
+			position: absolute;
+			top: 300px;
+			left: 50%;
+		}
+		#inner-container {
+			position: absolute;
+			top: 0;
+			left: -50%;
+		}
+		#tip-container {
+			width: 250px;
+			position: absolute;
+			left: 50%;
+			top: 331px;
+			display: none;
+		}
+		#tip-container #tip {
+			width: 278px;
+			background-color: #fff;
+			position: absolute;
+			border: 1px solid #ddd;
+			left: -50%;
+		}
+		#tip-container ul {
+			list-style: none;
+		}
+		#tip-container li {
+			padding-left: 10px;
+			height: 30px;
+			line-height: 30px;
+		}
+		#tip-container li:hover {
+			background-color: #ddd;
+			text-decoration: underline;
+		}
+	</style>
+	<body>
+		<div id="bg">
+			<div id="inner-container">
+				<div id="logo"></div>
+				<form id="form" action="" target="_blank" method="get" >
+					<input id="search-text" type="text">
+					<input id="search-button" type="submit" value="">
+				</form>
+			</div>
+		</div>
+		<div id="tip-container">
+			<div id="tip">
+				<ul id="list">
+					<li>东方是担惊受恐</li>
+					<li>多少撒大放送</li>
+					<li>驾驶是大法师的</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function getDOM (id) {
+				return document.getElementById(id);
+			}
+
+			function createXHR () {
+				if(typeof XMLHttpRequest != "undefined"){
+					return new XMLHttpRequest();
+				} else if(typeof ActiveXObject != "undefined"){
+					if(typeof arguments.callee.activeString != "string"){
+						var versions = ['MAXML2.XMLHttp.6.0', "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"], 
+							i,
+							len;
+						label:
+						for (i = 0, len = versions.length; i < len; i++){
+							try{
+								new ActiveXObject(versions[i]);
+								arguments.callee.activeString = versions[i];
+								break;
+							} catch(error){
+								continue label;
+							}
+						}
+					}
+					return new ActiveXObject(arguments.callee.activeString);
+				} else {
+					throw new Error("No XHR object available");
+				}
+			}
+			function ajax (url, callback) {
+				var xhr = createXHR();
+				xhr.onreadystatechange = function (event) {
+					if(xhr.readyState == 4){
+						if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+							callback(JSON.parse(xhr.responseText));
+						}
+					}
+				}
+				xhr.open('get', 'url', false);
+				xhr.send(null);
+			}
+
+			function addEvent(id, event, fn){
+				var el = getDOM(id) || document;
+				if(el.addEventListener){
+					el.addEventListener(event, fn, false);
+				} else if(el.attachEvent){
+					el.attachEvent('on'+event, fn);
+				}
+			}
+
+			//var searchBox = getDOM("search-text");
+			addEvent("search-text", "keyup", function (event) {
+				var text = getDOM("search-text").value;/*
+				ajax("http://api.bing.com/qsonhs.aspx?q="+text, function () {
+					var data = d.AS.Results[0].Suggests;
+					var html = '';
+					for(var i = 0; i < d.length; i++){
+						html += "<li>" + d[i].Txt + "</li>";
+					}
+					getDOM("list").innerHTML = html;
+					*/
+					getDOM("tip-container").style.display = "block";
+				//});
+			});
+
+			var delegate = function (target, event, fn) {
+				addEvent("document", event, function (e) {
+					if(e.target.nodeName == target.toUpperCase()){
+						fn.call(e.target);
+					}
+				});
+			}
+
+			delegate("li", "click", function(){
+				var key = this.innerHTML;
+				//location.href = "http://cn.bing.com/search?q=" + key;
+				location.href = "http://www.baidu.com";
+			});
+
+			addEvent("document","click", function (event) {
+				getDOM("tip-container").style.display = "none";
+			});
+		</script>
+		<script type="text/javascript">
+		/*
+			var ul = document.getElementById("list");
+			var li = document.getElementById("list").childNodes;
+			var handler = function (event) {
+				for(var i = 0; i < li.length; i++){
+					if(li[i].nodeType == 1){
+						li[i].style.backgroundColor = "#fff";
+					}
+				}
+				event.target.style.backgroundColor = "red";
+			}
+			ul.addEventListener("click",handler,false);
+			*/
+		</script>
+	</body>
+</html>

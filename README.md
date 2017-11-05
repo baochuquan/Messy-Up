@@ -8,3 +8,4 @@
 - ```Leetcode```目录下存放了刷LeetCode时自己写的一些C++代码。
 - ```P2P-Module```目录下存放了用Python写的一个P2P模块。
 - ```VAG-EDID```目录下存放了研一时做的一个小任务，通过处理器的GPIO读取显示器的EDID信息。
+- ```JS-Practice```目录下存放了自己学习前端时所写的一些case。

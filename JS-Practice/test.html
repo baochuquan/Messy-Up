@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>练习</title>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript">
+			
+			window.onload = (function(){
+				document.getElementById('answer').innerHTML = "baochuquan";
+				//alert(args.toLocaleString());
+				//
+				var EventUtil = {
+					addHandler: function(element, type, handler){
+
+					},
+					getEvent: function (event) {
+						return event ? event : window.event;
+					},
+					getTarget: function (event) {
+						return event.target || event.srcElement;
+					},
+					preventDefault: function (event) {
+						if(event.preventDefault){
+							event.preventDefault();
+						} else {
+							event.returnValue = false;
+						}
+					},
+					removeHandler: function (element, type, handler) {
+						
+					},
+					stopPropagation: function (event) {
+						if(event.stopPropagation){
+							event.stopPropagation();
+						} else {
+							event.cancelBubble = true;
+						}
+					}
+				};
+
+				var div = document.getElementById("myDiv");
+				div.addEventListener("contextmenu", function(event){
+					event.preventDefault();
+					var menu = document.getElementById("myMenu");
+					menu.style.left = event.clientX + "px";
+					menu.style.top  = event.clientY + "px";
+					menu.style.visibility = "visible";
+				})
+				document.addEventListener("click", function (event) {
+					document.getElementById("myMenu").style.visibility = "hidden";
+				})
+
+				document.addEventListener("readystatechange", function(event){
+						alert("Content Loaded!");
+				});
+
+				(function(){
+					frames["richtedit"].document.designMode = "on";
+					frames["richtedit"].document.execCommand("bold", false, null);
+					frames["richtedit"].document.execCommand("italic", false, null);
+					frames["richtedit"].document.execCommand("createlink", false, "http://www.baidu.com");
+				})();
+				document.execCommand("italic", false, null);
+				var res = frames["richtedit"].document.queryCommandEnabled("bold");
+				var isItalic = frames["richtedit"].document.queryCommandEnabled("fontsize");
+				//alert(isItalic);
+
+				// test postMessage for iframe
+				window.frames[0].postMessage("WTF","http://localhost");
+
+
+/*
+				// test postMessage for new page
+				var domain = 'http://localhost';
+				var myPopup = window.open(domain + '/~baochuquan/JS/test02.html','myWindow');
+
+				//周期性的发送消息
+				setInterval(function(){
+					var message = 'Hello!  The time is: ' + (new Date().getTime());
+					console.log('blog.local:  sending message:  ' + message);
+				        //send the message and target URI
+					myPopup.postMessage(message,domain);
+				},6000);
+
+				//监听消息反馈
+				window.addEventListener('message',function(event) {
+					if(event.origin !== 'http://localhost') return;
+					console.log('received response:  ',event.data);
+				},false);
+*/
+				// my test
+				/*
+				var domain = "http://localhost";
+				var myPopup = window.open(domain + '/~baochuquan/JS/test02.html', 'myWindow');
+				var count = 1;
+				setInterval(function () {
+					var message = 'No.'+ count +'Hello! The time is: ' + (new Date().getTime());
+					console.log('sending message: ' + message);
+					myPopup.postMessage(message, domain);
+					count++;
+				}, 6000);
+				
+				window.addEventListener('message',function(event) {
+					if(event.origin !== 'http://localhost') return;
+					console.log('received response:  ',event.data);
+				},false);
+*/
+			});
+		</script>
+	</head>
+	<body>
+		<h1>baochuquan<strong>hahah</strong></h1>
+		<div id="answer" name="as" value="1"></div>
+		<div id="init">
+			<ul class="first chu quan	">
+				<li>chuquan</li>
+				<li>chuquan</li>
+				<li>chuquan</li>
+				<li>chuquan</li>
+			</ul>
+			<ol class="second">
+				<li>bao</li>
+				<li>bao</li>
+				<li>bao</li>
+				<li>bao</li>
+			</ol>
+			<table border="1" width="100%" id="myTab">
+				<tbody>
+					<tr>
+						<td>Cell 1, 1</td>
+						<td>Cell 1, 2</td>
+					</tr>
+					<tr>
+						<td>Cell 2, 1</td>
+						<td>Cell 2, 2</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<input type="text" class="name" id="myInput1" />
+		<input type="text" class="name" id="myInput2" />
+		<div id="myEvent">
+			<input type="button" value="Click Me" onclick="alert(event)">
+			<form method="post" id="myForm1">
+				<input type="text" name="username" value="">
+				<input type="button" value="Echo Username" onclick="alert(username.value)">
+			</form>
+			<input type="button" id="myBtn" value="Phase">
+		</div>
+		<div id="myDiv">
+			Right clilck or Ctrl+click me to get a custom context menu.
+			Click anywhere else to get the default context menu.
+		</div>
+		<ul id="myMenu" style="position:absolute; visibility:hidden;background-color:silver">
+			<li><a href="http://www.baidu.com">Baidu</a></li>
+			<li><a href="http://www.weibo.com">Weibo</a></li>
+		</ul>
+		<form method="post" id="myForm2">
+			<input type="text" autofocus>
+			<input type="text" name="textbox1">
+			<input type="text" name="textbox2">
+			<input type="number" min="0" max="100" step="5" name="count">
+			<input type="text" pattern="\d+" name="digit">
+			<ul>
+				<li><input type="radio" name="color" value="red">Red</li>
+				<li><input type="radio" name="color" value="green">Green</li>
+				<li><input type="radio" name="color" value="blue">Blue</li>
+			</ul>
+		</form>
+		<form>
+			<select name="location" id="selLocation">
+				<option value="Sunnyvale, CA">Sunnyvale</option>
+				<option value="Los Angeles, CA">Los Angeles</option>
+				<option value="Mountain View, CA">Mountain View</option>
+				<option value="">China</option>
+				<option>Australia</option>
+			</select>
+		</form>
+		<iframe src="iframeTest.html" name="richtedit" style="height:100px;width:100px;" id="myFrame"></iframe>
+		<div class="editable" id="richedit" contenteditable>
+			
+		</div>
+		<a href="test02.html" id="link">link to test02.html</a>
+		<div class="mediaplayer"> 
+			<div class="video">
+				<video id="player" src="movie.mov" poster="mymovie.jpg" width="300" height="200">
+					Video Player not available.
+				</video>
+			</div>
+			<div class="controls">
+				<input type="button" value="Play" id="video-btn">
+				<span id="curtime">0</span>/<span id="duration">0</span>
+			</div>
+		</div>
+	</body>
+</html>

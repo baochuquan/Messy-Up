@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Gain Message</title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function () {
+			window.addEventListener('message',function(event) {
+				if(event.origin !== 'http://localhost') return;
+				console.log('message received:  ' + event.data);
+				document.body.innerHTML = document.body.innerHTML + '<br>'+ event.data;
+				event.source.postMessage('holla back youngin!',event.origin);
+			},false);		
+		};
+	</script>
+	<body>
+
+	</body>
+</html>

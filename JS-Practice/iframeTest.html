@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blank Page for Rich Text Editing</title>
+	</head>
+	<script type="text/javascript">
+		window.addEventListener("message", function (event) {
+			if(event.origin != "http://localhost")
+				return ;
+			document.body.innerHTML = event.data;
+		}, false)
+	</script>
+	<body>
+		asdfa
+	</body>
+</html>
