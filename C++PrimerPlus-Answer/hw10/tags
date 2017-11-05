@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CLASS_H_	Class.h	/^#define CLASS_H_$/;"	d
+FormalShow	Class1.cpp	/^void Person::FormalShow() const $/;"	f	class:Person
+GOLF_H_	golf.h	/^#define GOLF_H_$/;"	d
+Golf	golf.cpp	/^Golf::Golf(const char * str, int n)$/;"	f	class:Golf
+Golf	golf.h	/^	Golf(){fullname[0] = '\\0'; handicap = 0;}$/;"	f	class:Golf
+Golf	golf.h	/^class Golf$/;"	c
+Item	stack.h	/^typedef struct customer Item;$/;"	t	typeref:struct:customer
+LIMIT	Class.h	/^	const static int LIMIT = 25;$/;"	m	class:Person
+Len	golf.h	/^	const static int Len = 40;$/;"	m	class:Golf
+MAX	stack.h	/^	enum {MAX = 10};$/;"	e	enum:Stack::__anon1
+Move	Class.h	/^class Move$/;"	c
+Move	Class1.cpp	/^Move::Move(double a, double b)$/;"	f	class:Move
+NUM3	test_1.cpp	/^#define NUM3$/;"	d	file:
+Person	Class.h	/^	Person() {lname = "ddddd"; fname[0] = '\\0';}$/;"	f	class:Person
+Person	Class.h	/^class Person$/;"	c
+Person	Class1.cpp	/^Person::Person(const string & ln, const char * fn)$/;"	f	class:Person
+STACK_H_	stack.h	/^#define STACK_H_$/;"	d
+Show	Class1.cpp	/^void Person::Show() const$/;"	f	class:Person
+Stack	stack.cpp	/^Stack::Stack()$/;"	f	class:Stack
+Stack	stack.h	/^class Stack$/;"	c
+add	Class1.cpp	/^Move & Move::add(const Move & m)$/;"	f	class:Move
+customer	stack.h	/^struct customer$/;"	s
+fname	Class.h	/^	char fname[LIMIT];$/;"	m	class:Person
+fullname	golf.h	/^		char fullname[Len];$/;"	m	struct:Golf::golf
+fullname	stack.h	/^	char fullname[35];$/;"	m	struct:customer
+golf	golf.h	/^	struct golf$/;"	s	class:Golf
+handicap	golf.h	/^		int handicap;$/;"	m	struct:Golf::golf
+isempty	stack.cpp	/^bool Stack::isempty()const$/;"	f	class:Stack
+isfull	stack.cpp	/^bool Stack::isfull()const$/;"	f	class:Stack
+items	stack.h	/^	Item items[MAX];$/;"	m	class:Stack
+lname	Class.h	/^	string lname;$/;"	m	class:Person
+main	test_1.cpp	/^int main()$/;"	f
+payment	stack.h	/^	double payment;$/;"	m	struct:customer
+pop	stack.cpp	/^bool Stack::pop(Item & item)$/;"	f	class:Stack
+push	stack.cpp	/^bool Stack::push(const Item & item)$/;"	f	class:Stack
+reset	Class1.cpp	/^Move & Move::reset(double a , double b)$/;"	f	class:Move
+setgolf	golf.cpp	/^int setgolf()$/;"	f
+showmove	Class1.cpp	/^void Move::showmove()const$/;"	f	class:Move
+top	stack.h	/^	int top;$/;"	m	class:Stack
+x	Class.h	/^	double x;$/;"	m	class:Move
+y	Class.h	/^	double y;$/;"	m	class:Move

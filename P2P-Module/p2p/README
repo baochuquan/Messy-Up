@@ -1,0 +1,27 @@
+
+how to test these two programs?
+
+step 0: modify myClient.py
+		SERVER_IP = ''  ====> for example: SERVER_IP = '115.20.61.177'
+
+step 1: run mySever.py on a PC with public IP
+
+step 2: run myClient.py on two PCs in private network
+
+step 3: operators on two Clients
+	step 3.1: 	login from Client A and B
+				command: login#[username]				//for example: login#bao		
+				//if server has the infomation of 'bao', means login successfully
+
+	step 3.2:	get IP table from server
+				command: getalluser
+				//if Client has the information of all the users, means get the IP table successfully
+
+	step 3.3:	set the user you want connect
+				command: connect#[another username]		//for example:	connect#bao
+
+	step 3.4:	UDP hole punching from both sides
+				command: echo#'message'					//for example:	echo#hello
+	
+	step 3.5:	p2p communication
+				command: echo#'message'					

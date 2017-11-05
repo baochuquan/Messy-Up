@@ -1,0 +1,53 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BottleCount	port.h	/^	int BottleCount()const { return bottles; }$/;"	f	class:Port
+Bravo	test_1.cpp	/^void Bravo(const Cd & disk)$/;"	f
+Cd	classic.cpp	/^Cd::Cd()$/;"	f	class:Cd
+Cd	classic.cpp	/^Cd::Cd(const Cd & d)$/;"	f	class:Cd
+Cd	classic.cpp	/^Cd::Cd(const char * s1, const char * s2, const int n, const double x)$/;"	f	class:Cd
+Cd	classic.h	/^class Cd$/;"	c
+Classic	classic.cpp	/^Classic::Classic()$/;"	f	class:Classic
+Classic	classic.cpp	/^Classic::Classic(const Cd & cd, char * s3): Cd (cd)$/;"	f	class:Classic
+Classic	classic.cpp	/^Classic::Classic(const char * s1, const char * s2, const char * s3, const int n, const double x): Cd (s1, s2, n, x)$/;"	f	class:Classic
+Classic	classic.h	/^class Classic : public Cd$/;"	c
+Main	classic.h	/^	char * Main;$/;"	m	class:Classic
+NUM2	test_1.cpp	/^#define NUM2$/;"	d	file:
+PORT_H_	port.h	/^#define PORT_H_$/;"	d
+Port	port.cpp	/^Port::Port(const Port & p)$/;"	f	class:Port
+Port	port.cpp	/^Port::Port(const char * br, const char * st, int b)$/;"	f	class:Port
+Port	port.h	/^class Port$/;"	c
+Report	classic.cpp	/^void Cd::Report()const$/;"	f	class:Cd
+Report	classic.cpp	/^void Classic::Report()const$/;"	f	class:Classic
+Show	port.cpp	/^void Port::Show()const$/;"	f	class:Port
+Show	port.cpp	/^void VintagePort::Show()const$/;"	f	class:VintagePort
+VintagePort	port.cpp	/^VintagePort::VintagePort()$/;"	f	class:VintagePort
+VintagePort	port.cpp	/^VintagePort::VintagePort(const VintagePort & vp): Port(vp)$/;"	f	class:VintagePort
+VintagePort	port.cpp	/^VintagePort::VintagePort(const char * br, int b, const char * nn, int y): Port(br, "none", b)$/;"	f	class:VintagePort
+VintagePort	port.h	/^class VintagePort: public Port$/;"	c
+bottles	port.h	/^	int bottles;$/;"	m	class:Port
+brand	port.h	/^	char * brand;$/;"	m	class:Port
+classic_H	classic.h	/^#define classic_H$/;"	d
+label	classic.h	/^	char * label;$/;"	m	class:Cd
+main	test_1.cpp	/^int main()$/;"	f
+nickname	port.h	/^	char * nickname;$/;"	m	class:VintagePort
+operator +=	port.cpp	/^Port & Port::operator += (int b)$/;"	f	class:Port
+operator -=	port.cpp	/^Port & Port::operator -= (int b)$/;"	f	class:Port
+operator <<	port.cpp	/^ostream & operator << (ostream & os, const Port & p)$/;"	f
+operator <<	port.cpp	/^ostream & operator << (ostream & os, const VintagePort & vp)$/;"	f
+operator =	classic.cpp	/^Cd & Cd::operator =(const Cd & d)$/;"	f	class:Cd
+operator =	classic.cpp	/^Classic & Classic::operator =(const Classic & d)$/;"	f	class:Classic
+operator =	port.cpp	/^Port & Port::operator = (const Port & p)$/;"	f	class:Port
+operator =	port.cpp	/^VintagePort & VintagePort::operator = (const VintagePort & vp)$/;"	f	class:VintagePort
+performers	classic.h	/^	char * performers;$/;"	m	class:Cd
+playtime	classic.h	/^	double playtime;$/;"	m	class:Cd
+selections	classic.h	/^	int selections;$/;"	m	class:Cd
+style	port.h	/^	char style[20];$/;"	m	class:Port
+year	port.h	/^	int year;$/;"	m	class:VintagePort
+~Cd	classic.cpp	/^Cd::~Cd()$/;"	f	class:Cd
+~Classic	classic.cpp	/^Classic::~Classic()$/;"	f	class:Classic
+~Port	port.h	/^	virtual ~Port(){ delete [] brand; }$/;"	f	class:Port
+~VintagePort	port.h	/^	~VintagePort(){ delete [] nickname; }$/;"	f	class:VintagePort

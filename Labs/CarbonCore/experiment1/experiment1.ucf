@@ -1,0 +1,13 @@
+NET "sw<2>" LOC="K3";
+NET "sw<1>" LOC="L3";
+NET "sw<0>" LOC="P11";
+NET "ld<7>" LOC="G1";
+NET "ld<7>" LOC="P4";
+NET "ld<6>" LOC="N4";
+NET "ld<5>" LOC="N5";
+NET "ld<4>" LOC="P6";
+NET "ld<3>" LOC="P7";
+NET "ld<2>" LOC="G1";
+NET "ld<1>" LOC="M11";
+NET "ld<0>" LOC="M5";
+
