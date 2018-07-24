@@ -117,3 +117,4 @@ def spamTest():
 		if classifyNB(array(wordVector), p0V, p1V, pSpam) != classList[docIndex]:
 			errorCount += 1
 	print 'the error rate is: ', float(errorCount)/len(testSet)
+
